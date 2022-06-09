@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  blog:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    container_name: blogservice
+    volumes:
+      - import:/app/src/import
+    env_file:
+      - .env
+
+volumes:
+  import:
+  

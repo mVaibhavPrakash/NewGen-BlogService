@@ -1,0 +1,15 @@
+FROM node:alpine
+
+WORKDIR /app/src
+
+
+COPY ./package.json .
+COPY /package-lock.json .
+
+RUN npm install
+
+COPY . .
+
+EXPOSE 3013
+
+CMD ["npm","start"]
